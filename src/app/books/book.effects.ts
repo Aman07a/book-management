@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { of } from 'rxjs';
+import { catchError, map, mergeMap } from 'rxjs/operators';
+
 import * as bookActions from './book.actions';
 import { BookService } from './book.service';
-import { mergeMap, map, catchError, of } from 'rxjs';
 
 @Injectable()
 export class BookEffects {
